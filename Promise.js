@@ -1,15 +1,11 @@
-const trueCondition = true;
-
-const promise = new Promise((resolve, reject) => {
-        if (trueCondition){
-            resolve('성공');
-        } else {
-            reject('실패');
-        }
-});
-
-promise.then((result) => {
-    console.log(result);
-}, (error) => {
-    console.log(console.error);
-});
+doSomething()
+  .then(function (result) {
+    return doSomethingElse(result);
+  })
+  .then(function (newResult) {
+    return doThirdThing(newResult);
+  })
+  .then(function (finalResult) {
+    console.log("Got the final result: " + finalResult);
+  })
+  .catch(failureCallback);
